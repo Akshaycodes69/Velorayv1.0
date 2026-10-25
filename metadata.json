@@ -1,0 +1,6 @@
+{
+  "name": "VELORAY // Tactical Cycling Computer & Cockpit Telemetry",
+  "description": "Ultra-compact circular transflective handlebar display and aerodynamic cycling telemetry ecosystem.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

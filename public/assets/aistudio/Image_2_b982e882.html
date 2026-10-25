@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>VELORAY // GPS Cycling Computer &amp; Telemetry</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-secondary-fixed-variant":"#004f54","surface-bright":"#37393d","surface-container-lowest":"#0c0e11","inverse-on-surface":"#2f3034","secondary-fixed":"#7df4ff","surface-container-high":"#282a2d","primary-container":"#caf300","error-container":"#93000a","on-surface":"#e2e2e6","surface-variant":"#333538","on-primary":"#2a3400","outline":"#8f9378","secondary-fixed-dim":"#00dbe9","tertiary":"#ffffff","on-secondary-container":"#00686f","on-background":"#e2e2e6","background":"#111316","inverse-surface":"#e2e2e6","surface-container":"#1e2023","on-error-container":"#ffdad6","on-primary-fixed-variant":"#3e4c00","on-surface-variant":"#c5c9ac","primary-fixed":"#caf300","primary-fixed-dim":"#b0d500","on-tertiary-fixed-variant":"#6c3a00","tertiary-fixed-dim":"#ffb778","on-error":"#690005","on-tertiary-container":"#975300","outline-variant":"#444932","surface-container-highest":"#333538","on-tertiary-fixed":"#2e1500","surface-container-low":"#1a1c1f","surface":"#111316","on-primary-container":"#596c00","tertiary-container":"#ffdcc1","error":"#ffb4ab","on-secondary":"#00363a","surface-dim":"#111316","inverse-primary":"#536600","on-tertiary":"#4c2700","primary":"#ffffff","tertiary-fixed":"#ffdcc1","secondary":"#d3fbff","on-secondary-fixed":"#002022","on-primary-fixed":"#171e00","secondary-container":"#00eefc","surface-tint":"#b0d500"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"space-sm":"0.5rem","margin-tablet":"1.5rem","space-xl":"2rem","space-xs":"0.25rem","space-lg":"1.25rem","space-md":"0.75rem","margin-desktop":"2.5rem","gutter-tablet":"1rem",gutter:"0.75rem","gutter-desktop":"1.5rem",margin:"1rem"},fontFamily:{"metric-val":["JetBrains Mono"],"display-hero":["JetBrains Mono"],"label-caps":["JetBrains Mono"],"body-sm":["Inter"],"headline-lg-mobile":["Space Grotesk"],"display-hero-mobile":["JetBrains Mono"],"headline-sm":["Space Grotesk"],"body-lg":["Inter"],"headline-lg":["Space Grotesk"],"label-sm":["JetBrains Mono"],"body-md":["Inter"],"headline-md":["Space Grotesk"]},fontSize:{"metric-val":["32px",{lineHeight:"32px",letterSpacing:"-0.02em",fontWeight:"600"}],"display-hero":["56px",{lineHeight:"56px",letterSpacing:"-0.04em",fontWeight:"700"}],"label-caps":["11px",{lineHeight:"14px",letterSpacing:"0.12em",fontWeight:"500"}],"body-sm":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"400"}],"headline-lg-mobile":["28px",{lineHeight:"34px",letterSpacing:"-0.01em",fontWeight:"700"}],"display-hero-mobile":["40px",{lineHeight:"40px",letterSpacing:"-0.03em",fontWeight:"700"}],"headline-sm":["18px",{lineHeight:"24px",letterSpacing:"0.01em",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"24px",letterSpacing:"0em",fontWeight:"400"}],"headline-lg":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"700"}],"label-sm":["10px",{lineHeight:"12px",letterSpacing:"0.08em",fontWeight:"400"}],"body-md":["14px",{lineHeight:"20px",letterSpacing:"0.01em",fontWeight:"400"}],"headline-md":["24px",{lineHeight:"30px",letterSpacing:"0em",fontWeight:"600"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col justify-between"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.6)]"><div class="h-16 w-full px-margin-desktop flex items-center justify-between"><div class="flex items-center gap-space-xl"><a class="flex items-center gap-space-sm" data-path="overview" href="#"><img alt="VELORAY Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W3DamihwyF86jzpMCgYlOqs_Aps38L1IdTKGIl1ge1VBkMX6OKKT73FPhNz8v3B601EEj-H-Ga98XfbilORx4nhbJay4drKNuARO8i0xvWfGQzYKOqCYw-mgPgmsFeQ2uaRElMfbiLKI3YXR-LKLCpnzvfgcSSiKOv_7Rzc-fPBBFQHh2YJok1_SF4Tc75JFCOaCfHBa9aaocd4AxhUyPHzYUqy7RYZpbVR6gmQ0Sw1zV5uybo5roPUpCl"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm uppercase tracking-wider text-primary leading-none">VELORAY</span><span class="font-label-sm text-label-sm uppercase tracking-widest text-outline leading-none mt-1">AERO GPS // 01</span></div></a><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 bg-surface-container rounded-DEFAULT"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-fixed opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary-fixed"></span></span><span class="font-label-caps text-label-caps uppercase text-primary-fixed tracking-widest">BLE 5.3 Active</span></div><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary-fixed border-b-2 border-primary-fixed"><a aria-current="page" class="font-label-caps uppercase transition-colors py-2 text-primary-fixed border-b-2 border-primary-fixed" data-path="overview" href="#">Overview</a><a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors py-2" data-path="hardware-and-specs" href="#">Hardware &amp; Specs</a><a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors py-2" data-path="companion-app" href="#">Companion App</a><a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors py-2" data-path="shop-and-bundles" href="#">Shop &amp; Bundles</a></nav></div><div class="flex items-center gap-space-md"><a class="relative p-space-xs text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center" data-path="cart" href="#"><span class="material-symbols-outlined text-[20px]">shopping_bag</span><span class="absolute -top-1 -right-1 font-label-sm text-label-sm bg-primary-container text-on-primary-container px-1 py-0.2 rounded-DEFAULT">1</span></a><a class="hidden sm:flex items-center justify-center h-10 px-space-md bg-primary-container text-on-primary-container hover:bg-primary-fixed-dim hover:text-on-primary font-label-caps text-label-caps uppercase tracking-wider transition-colors rounded-DEFAULT font-semibold" data-path="pre-order" href="#">Pre-Order Now - $179</a><div class="flex items-center pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBM2nHPNcWXWxHCbIacuh4WDjcGr1_oG8yXz9qg0KFHI9Mqnk9bfTu9prRMBZ53YaT_G1dj-coKC83Xclx_-w772-M7T3R4z4BNOxGPJ8WIlB8PSSmmYslby05r19kyK6pIXUH9Rpa9HiHCsvRW8BKKSDbNrutqEkfz6i_F9LZeaczay0Sp0v4ZwHNkQagwg8LvWSWj1GVU1oW_13ASX3Wj_JcHyRSKkD9xWY_vNLv_EVWWi8RojeAdfw"/></div></div></div></header><main class="w-full pt-16 bg-surface min-h-[calc(100vh-4rem)]"><div class="flex flex-col w-full">
+<!-- SECTION 1: HERO & TELEMETRY COCKPIT -->
+<section class="relative w-full px-margin-desktop py-space-xl overflow-hidden bg-surface">
+<!-- Atmospheric subtle glows contained -->
+<div class="absolute -top-32 right-1/4 w-96 h-96 bg-primary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-1/2 -left-20 w-80 h-80 bg-secondary-fixed/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center relative z-10">
+<!-- Left Column: Copy & CTAs -->
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<!-- Eyebrow Badge -->
+<div class="inline-flex items-center gap-space-xs self-start px-space-sm py-1 bg-surface-container-high rounded-DEFAULT text-primary-fixed">
+<span class="inline-block w-2 h-2 rounded-full bg-primary-fixed animate-pulse"></span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-primary-fixed">Next-Gen Cycling Telemetry • Bluetooth 5.3</span>
+</div>
+<!-- Headline -->
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">
+          Turn-by-Turn Precision.<br/>
+<span class="text-primary-fixed">Zero Distractions.</span>
+</h1>
+<!-- Subhead -->
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+          An ultra-compact circular transflective handlebar display engineered for pure focus. Instant glanceable route prompts streamed seamlessly from your phone with 35h battery life and IP68 weatherproofing.
+        </p>
+<!-- CTAs -->
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+<a class="h-12 px-space-lg bg-primary-container text-on-primary-container hover:bg-primary-fixed-dim hover:text-on-primary font-label-caps text-label-caps uppercase tracking-wider font-semibold rounded-DEFAULT flex items-center justify-center gap-space-xs transition-colors shadow-lg" href="#preorder">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+            Order VELORAY Core — $179
+          </a>
+<a class="h-12 px-space-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-label-caps text-label-caps uppercase tracking-wider rounded-DEFAULT flex items-center justify-center gap-space-xs transition-colors" href="#interactive-demo">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+            Explore Interactive Specs
+          </a>
+</div>
+<!-- Trust Mini-Indicator -->
+<div class="flex items-center gap-space-md pt-space-xs text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary-fixed text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary-fixed text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary-fixed text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary-fixed text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary-fixed text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-label-sm text-label-sm tracking-wider uppercase">Tested in 1,200+ Alpine &amp; Desert Kilometers</span>
+</div>
+</div>
+<!-- Right Column: Interactive Hardware Telemetry Display Mock -->
+<div class="lg:col-span-5 flex justify-center relative">
+<div class="relative w-full max-w-[380px] aspect-square flex items-center justify-center">
+<!-- Background Cockpit Mount Graphic (Matte Anodized Base) -->
+<div class="absolute inset-x-8 top-1/2 -translate-y-1/2 h-8 bg-surface-container-high rounded-full opacity-60"></div>
+<div class="absolute inset-0 rounded-full bg-surface-container-lowest shadow-2xl flex items-center justify-center p-3">
+<!-- Machined Alloy Bezel with Knurled Texture Impression -->
+<div class="w-full h-full rounded-full bg-surface-container-high p-3 flex items-center justify-center relative overflow-hidden">
+<!-- Subtle Compass Tick Ring -->
+<svg class="absolute inset-0 w-full h-full text-outline-variant opacity-40 animate-[spin_120s_linear_infinite]" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="none" r="48" stroke="currentColor" stroke-dasharray="1 3" stroke-width="1.5"></circle>
+<circle cx="50" cy="50" fill="none" r="44" stroke="currentColor" stroke-width="0.5"></circle>
+</svg>
+<!-- Transflective High-Contrast Round Screen Canvas -->
+<div class="w-full h-full rounded-full bg-surface-container-lowest p-6 flex flex-col justify-between items-center text-center relative z-10">
+<!-- Screen Top Header: Turn Distance & Battery -->
+<div class="w-full flex justify-between items-center px-2">
+<div class="flex items-center gap-1 text-primary-fixed">
+<span class="material-symbols-outlined text-[14px]">satellite_alt</span>
+<span class="font-label-sm text-label-sm uppercase">GPS 3D FIX</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface">
+<span class="font-label-sm text-label-sm">94%</span>
+<span class="material-symbols-outlined text-[14px] text-primary-fixed">battery_full</span>
+</div>
+</div>
+<!-- Navigation Core Indicator (Arrow & Distance Countdown) -->
+<div class="flex flex-col items-center justify-center my-auto">
+<!-- Sharp Neon Navigation Arrow -->
+<div class="w-16 h-16 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center mb-1 shadow-lg transform -rotate-12 transition-transform duration-500 hover:rotate-0">
+<span class="material-symbols-outlined text-[42px] font-bold">turn_sharp_right</span>
+</div>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-metric-val text-metric-val text-primary tracking-tight font-bold" id="hero-countdown">120</span>
+<span class="font-label-caps text-label-caps uppercase text-primary-fixed font-bold">METERS</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase text-on-surface font-semibold max-w-[200px] truncate mt-1">Skyline Blvd // Crest</span>
+</div>
+<!-- Screen Bottom Metrics: Speed & Elevation -->
+<div class="w-full grid grid-cols-2 gap-2 pt-2 bg-surface-container-low rounded-xl px-3 py-1.5">
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-outline uppercase">LIVE SPEED</span>
+<div class="flex items-baseline gap-0.5">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">28.4</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">KM/H</span>
+</div>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-outline uppercase">ELEV GAIN</span>
+<div class="flex items-baseline gap-0.5">
+<span class="font-headline-sm text-headline-sm text-secondary-fixed font-bold">+340</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">M</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Ambient Telemetry Status Badge -->
+<div class="absolute -bottom-4 right-2 bg-surface-container-high px-space-sm py-1 rounded-DEFAULT shadow-md flex items-center gap-space-xs text-primary-fixed">
+<span class="material-symbols-outlined text-[16px]">sensors</span>
+<span class="font-label-caps text-label-caps uppercase">Auto Ambient Backlight: 82%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Key Stats Horizon Bar -->
+<div class="max-w-7xl mx-auto mt-space-xl pt-space-lg">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md">
+<div class="bg-surface-container-low p-space-md rounded-DEFAULT flex flex-col">
+<div class="flex items-center gap-space-xs text-primary-fixed mb-1">
+<span class="material-symbols-outlined text-[20px]">battery_charging_full</span>
+<span class="font-label-caps text-label-caps uppercase">Endurance Core</span>
+</div>
+<span class="font-headline-md text-headline-md text-primary">35 Hours</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Single charge runtime with transflective sunlight mode.</span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-DEFAULT flex flex-col">
+<div class="flex items-center gap-space-xs text-secondary-fixed mb-1">
+<span class="material-symbols-outlined text-[20px]">water_drop</span>
+<span class="font-label-caps text-label-caps uppercase">Submersion Shield</span>
+</div>
+<span class="font-headline-md text-headline-md text-primary">IP68 Rated</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Guaranteed waterproof in torrential storms and river fords.</span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-DEFAULT flex flex-col">
+<div class="flex items-center gap-space-xs text-primary-fixed mb-1">
+<span class="material-symbols-outlined text-[20px]">speed</span>
+<span class="font-label-caps text-label-caps uppercase">Off-Course Calc</span>
+</div>
+<span class="font-headline-md text-headline-md text-primary">&lt;0.3s Latency</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Instant hardware re-routing without smartphone delay.</span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-DEFAULT flex flex-col">
+<div class="flex items-center gap-space-xs text-secondary-fixed mb-1">
+<span class="material-symbols-outlined text-[20px]">fit_screen</span>
+<span class="font-label-caps text-label-caps uppercase">Cockpit Versatility</span>
+</div>
+<span class="font-headline-md text-headline-md text-primary">22.2 - 31.8mm</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Machined alloy out-front &amp; aero-stem universal clamps.</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: KEY FEATURE GRID -->
+<section class="w-full px-margin-desktop py-space-xl bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto flex flex-col gap-space-xl">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div>
+<div class="font-label-caps text-label-caps uppercase text-primary-fixed tracking-widest mb-2">Tactical Engineering</div>
+<h2 class="font-headline-lg text-headline-lg text-primary">Engineered for the Open Road</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+          Zero bloatware, touchscreens that fumble in rain, or endless setup submenus. Just pure directional clarity when pushing zone 4.
+        </p>
+</div>
+<!-- Bento-style 4 Feature Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<!-- Card 1: Glanceable Circular UI -->
+<div class="bg-surface-container p-space-xl rounded-DEFAULT flex flex-col justify-between relative group hover:bg-surface-container-high transition-colors">
+<div class="flex flex-col gap-space-sm">
+<div class="w-10 h-10 rounded-DEFAULT bg-surface-container-highest flex items-center justify-center text-primary-fixed mb-2">
+<span class="material-symbols-outlined text-[24px]">wb_sunny</span>
+</div>
+<span class="font-label-caps text-label-caps uppercase text-outline">Optics &amp; Display</span>
+<h3 class="font-headline-md text-headline-md text-primary">Glanceable Circular UI</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              High-contrast transflective MIP screen utilizes ambient sunlight rather than fighting it. Integrated photometric light sensors auto-shift contrast in tunnels and low-light alpine passes.
+            </p>
+</div>
+<!-- Visual Tech Inset -->
+<div class="mt-space-lg bg-surface-container-lowest p-space-md rounded-DEFAULT flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]">contrast</span>
+<span class="font-label-sm text-label-sm uppercase text-on-surface">Sunlight Legibility Ratio</span>
+</div>
+<span class="font-metric-val text-headline-sm text-primary-fixed font-bold">14:1 AR</span>
+</div>
+</div>
+<!-- Card 2: True BLE Low-Energy Sync -->
+<div class="bg-surface-container p-space-xl rounded-DEFAULT flex flex-col justify-between relative group hover:bg-surface-container-high transition-colors">
+<div class="flex flex-col gap-space-sm">
+<div class="w-10 h-10 rounded-DEFAULT bg-surface-container-highest flex items-center justify-center text-secondary-fixed mb-2">
+<span class="material-symbols-outlined text-[24px]">bluetooth_connected</span>
+</div>
+<span class="font-label-caps text-label-caps uppercase text-outline">Ecosystem &amp; Protocol</span>
+<h3 class="font-headline-md text-headline-md text-primary">True BLE 5.3 Low-Energy Sync</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Offload route computation dynamically. Your phone runs seamless vector navigation in your jersey pocket with less than 2% battery consumption per 100km ride.
+            </p>
+</div>
+<!-- Visual Tech Inset -->
+<div class="mt-space-lg bg-surface-container-lowest p-space-md rounded-DEFAULT flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">phone_android</span>
+<span class="font-label-sm text-label-sm uppercase text-on-surface">Phone Battery Impact</span>
+</div>
+<span class="font-metric-val text-headline-sm text-secondary-fixed font-bold">-1.8% / Hr</span>
+</div>
+</div>
+<!-- Card 3: Dual Mode Navigation -->
+<div class="bg-surface-container p-space-xl rounded-DEFAULT flex flex-col justify-between relative group hover:bg-surface-container-high transition-colors">
+<div class="flex flex-col gap-space-sm">
+<div class="w-10 h-10 rounded-DEFAULT bg-surface-container-highest flex items-center justify-center text-primary-fixed mb-2">
+<span class="material-symbols-outlined text-[24px]">explore</span>
+</div>
+<span class="font-label-caps text-label-caps uppercase text-outline">Waypoint Routing</span>
+<h3 class="font-headline-md text-headline-md text-primary">Turn-by-Turn &amp; Compass Modes</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Switch fluidly between precise street intersection turns and free-form off-road waypoint compass bearings for untracked gravel and bikepacking journeys.
+            </p>
+</div>
+<!-- Visual Tech Inset -->
+<div class="mt-space-lg bg-surface-container-lowest p-space-md rounded-DEFAULT flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]">sync_alt</span>
+<span class="font-label-sm text-label-sm uppercase text-on-surface">Mode Toggle Action</span>
+</div>
+<span class="font-label-caps text-label-caps uppercase text-on-surface bg-surface-container-high px-2 py-1 rounded">Single Glove Tap</span>
+</div>
+</div>
+<!-- Card 4: Strava & Komoot Live Segments -->
+<div class="bg-surface-container p-space-xl rounded-DEFAULT flex flex-col justify-between relative group hover:bg-surface-container-high transition-colors">
+<div class="flex flex-col gap-space-sm">
+<div class="w-10 h-10 rounded-DEFAULT bg-surface-container-highest flex items-center justify-center text-secondary-fixed mb-2">
+<span class="material-symbols-outlined text-[24px]">flag</span>
+</div>
+<span class="font-label-caps text-label-caps uppercase text-outline">Community Telemetry</span>
+<h3 class="font-headline-md text-headline-md text-primary">Strava &amp; Komoot Live Segments</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Auto-sync GPX routes and live segment alerts with haptic vibration feedback. Real-time delta versus your personal record or current KOM leaderboard times.
+            </p>
+</div>
+<!-- Visual Tech Inset -->
+<div class="mt-space-lg bg-surface-container-lowest p-space-md rounded-DEFAULT flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">vibration</span>
+<span class="font-label-sm text-label-sm uppercase text-on-surface">Dual ERM Haptic Feedback</span>
+</div>
+<span class="font-metric-val text-headline-sm text-primary-fixed font-bold">PR +0:04s</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: LIVE ROUTE SIMULATION / COCKPIT COMPARISON -->
+<section class="w-full px-margin-desktop py-space-xl bg-surface" id="interactive-demo">
+<div class="max-w-7xl mx-auto flex flex-col gap-space-xl">
+<div class="text-center max-w-2xl mx-auto flex flex-col gap-space-xs">
+<span class="font-label-caps text-label-caps uppercase text-primary-fixed tracking-widest">Head-to-Head Reality</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Handlebar Phone vs. VELORAY Cockpit</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Why serious endurance athletes don't mount a $1,200 glass smartphone to high-vibration carbon cockpits.
+        </p>
+</div>
+<!-- Comparative Dual Panel Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg items-stretch">
+<!-- Negative Case: Phone Cockpit -->
+<div class="bg-surface-container-low p-space-xl rounded-DEFAULT flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-sm mb-space-md bg-surface-container-lowest p-space-sm rounded-DEFAULT">
+<span class="font-label-caps text-label-caps uppercase text-error tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">cancel</span> Traditional Phone Mount
+              </span>
+<span class="font-label-sm text-label-sm text-outline uppercase">Sub-optimal Setup</span>
+</div>
+<!-- Visual representation of phone issues -->
+<div class="w-full h-48 bg-surface-container-lowest rounded-DEFAULT p-space-md flex flex-col justify-center items-center relative overflow-hidden mb-space-md">
+<div class="absolute inset-0 bg-gradient-to-tr from-error/10 via-transparent to-surface-bright/20 pointer-events-none"></div>
+<span class="material-symbols-outlined text-[48px] text-error mb-2">screen_rotation</span>
+<p class="font-label-caps text-label-caps text-error text-center uppercase tracking-widest">Screen Dimmed: High Temp Throttling</p>
+<span class="font-body-sm text-body-sm text-outline mt-1 text-center">Unreadable in bright mid-day sun glare</span>
+</div>
+<div class="flex flex-col gap-space-sm text-body-sm text-on-surface-variant">
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-error text-[18px]">close</span>
+<span><strong>Severe Glare:</strong> OLED glossy glass mirrors direct sunlight and polarized lenses.</span>
+</div>
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-error text-[18px]">close</span>
+<span><strong>Severe Battery Drain:</strong> Constant GPS and max screen brightness drains phone in 2.5 hours.</span>
+</div>
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-error text-[18px]">close</span>
+<span><strong>Vibration Damage:</strong> Carbon road/gravel chatter permanently destroys smartphone optical image stabilization (OIS).</span>
+</div>
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-error text-[18px]">close</span>
+<span><strong>Rain Ghost Taps:</strong> Raindrops on touchscreen trigger accidental route cancellations.</span>
+</div>
+</div>
+</div>
+<div class="mt-space-lg pt-space-sm">
+<span class="font-label-sm text-label-sm text-outline uppercase">Typical Outcome: Dead battery before route finish</span>
+</div>
+</div>
+<!-- Positive Case: VELORAY Cockpit -->
+<div class="bg-surface-container p-space-xl rounded-DEFAULT flex flex-col justify-between shadow-xl relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-container/10 rounded-full blur-2xl pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between pb-space-sm mb-space-md bg-surface-container-high p-space-sm rounded-DEFAULT">
+<span class="font-label-caps text-label-caps uppercase text-primary-fixed tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> VELORAY Cockpit Ecosystem
+              </span>
+<span class="font-label-sm text-label-sm text-primary-fixed uppercase font-semibold">Purpose-Built</span>
+</div>
+<!-- Visual Representation of Veloray Advantage -->
+<div class="w-full h-48 bg-surface-container-lowest rounded-DEFAULT p-space-md flex flex-col justify-center items-center relative overflow-hidden mb-space-md">
+<div class="flex items-center gap-space-lg">
+<div class="w-24 h-24 rounded-full bg-surface-container-high p-2 flex items-center justify-center shadow-lg">
+<div class="w-full h-full rounded-full bg-surface-container-lowest flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-primary-fixed text-[28px]">navigation</span>
+<span class="font-label-caps text-label-caps text-primary mt-0.5">85m RT</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-primary-fixed uppercase">Sunlight Active Mode</span>
+<span class="font-headline-sm text-headline-sm text-primary">0% Glare Optics</span>
+<span class="font-label-sm text-label-sm text-outline">Transflective anti-scratch sapphire</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm text-body-sm text-on-surface">
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">check</span>
+<span><strong>Sunlight Amplification:</strong> Transflective screen gets clearer the brighter the ambient sun.</span>
+</div>
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">check</span>
+<span><strong>35h Battery Autonomy:</strong> Ride multi-day brevets or weekly commutes without reaching for a cable.</span>
+</div>
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">check</span>
+<span><strong>Rugged Shock Proofing:</strong> Solid-state internals rated for 15G rough cobblestone and MTB descent vibration.</span>
+</div>
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">check</span>
+<span><strong>Mechanical Actuation:</strong> Hard physical knurled dial operable with heavy winter neoprene gloves.</span>
+</div>
+</div>
+</div>
+<div class="mt-space-lg pt-space-sm flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-primary-fixed uppercase">System Status: Fully Autonomous GPS</span>
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">verified</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: SOCIAL PROOF & RIDER TESTIMONIALS -->
+<section class="w-full px-margin-desktop py-space-xl bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto flex flex-col gap-space-xl">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-primary-fixed tracking-widest mb-2 block">Proven Under Pressure</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Trusted by Ultra Racers &amp; Couriers</h2>
+</div>
+<div class="flex items-center gap-space-sm bg-surface-container px-space-md py-space-xs rounded-DEFAULT">
+<span class="font-metric-val text-headline-sm text-primary-fixed">4.9 / 5</span>
+<span class="font-label-sm text-label-sm text-outline uppercase">Across 2,400+ Verified Riders</span>
+</div>
+</div>
+<!-- Testimonial Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Rider 1: Gravel Endurance -->
+<div class="bg-surface-container p-space-lg rounded-DEFAULT flex flex-col justify-between">
+<div class="flex flex-col gap-space-md">
+<!-- Stars -->
+<div class="flex items-center gap-1 text-primary-fixed">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic">
+              "During the 350-mile Unbound course in baking Kansas sun, fellow racers had phones overheated on handlebars by noon. VELORAY ran continuously for 21 hours straight without missing a single gravel fork."
+            </p>
+<!-- Route Proof Snapshot Image -->
+<div class="relative w-full h-36 rounded-DEFAULT overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Rugged gravel bicycle handlebar cockpit covered in dry dust with a compact round GPS computer illuminated in bright daylight showing a directional waypoint on remote gravel road" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWxC8gJePKRmpFKB5K1QSU9jjub-G-n5GbRIjPbkJhvP0Gme9EpJ2PzTFzy8mFf_QrzODt2XU_SAht1KZuGz2FBphiqznCRhW24sdF5Npg3XoauAxth1f3bqrqRSHHiE6VmULSDsOWOi5n5sTZ-wfah4vlBo9_j6bMLQNC4q3SIoOiLpf10r7YiVP5_vKhQ5YJShZrTy3oAe7P9ShCxxiEcWGO2kUdL2JmC8xRvAXAo_Uw0egaCFXWww"/>
+<div class="absolute bottom-2 left-2 bg-surface-container-lowest/80 px-2 py-0.5 rounded font-label-sm text-label-sm text-primary-fixed">
+                Flint Hills Gravel // 348 KM
+              </div>
+</div>
+</div>
+<div class="pt-space-md flex items-center gap-space-sm mt-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center font-label-caps text-label-caps text-primary-fixed font-bold">
+              MK
+            </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary text-[15px] leading-tight">Marek Kowalski</span>
+<span class="font-label-sm text-label-sm text-outline uppercase">Ultra Gravel Racer • Badlands Finisher</span>
+</div>
+</div>
+</div>
+<!-- Rider 2: Urban Bicycle Messenger -->
+<div class="bg-surface-container p-space-lg rounded-DEFAULT flex flex-col justify-between">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center gap-1 text-primary-fixed">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic">
+              "Working 10-hour rush shifts in dense Chicago traffic requires immediate turn instinct. The giant green arrow and tactile distance counter keep my chin up and eyes on taxi doors instead of staring down at a phone."
+            </p>
+<div class="relative w-full h-36 rounded-DEFAULT overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Cinematic night rain street cycling POV through urban skyscrapers with bike computer shining clear bright green arrow indicator in foreground" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyZJZZglDPtmjSI8PckjKEGp9WxCEgpfJbz-LyYvHsQsqYCFTKmLqLgXve0IvPlBw7WoSwcfQNpstIIG1zblCAcngF0Cbfv33DLYD-a50jzhQB5lTGNYtCoU9vJGaWKDfFaskEgZfmmdN1Xdjr5BGSg8D5NUERsfnCq6QrDv8fsQdmhvrZU36imRxpWmLm-mbrFycng8_k7oGPvIHG1wyTZRSD93d5Xgzj4Dpfq1yUl07Wwlt0ZfzZ1Q"/>
+<div class="absolute bottom-2 left-2 bg-surface-container-lowest/80 px-2 py-0.5 rounded font-label-sm text-label-sm text-secondary-fixed">
+                Chicago Downtown Grid // 88 KM Shift
+              </div>
+</div>
+</div>
+<div class="pt-space-md flex items-center gap-space-sm mt-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center font-label-caps text-label-caps text-secondary-fixed font-bold">
+              JL
+            </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary text-[15px] leading-tight">Jenna Lin</span>
+<span class="font-label-sm text-label-sm text-outline uppercase">City Courier • Alleycat Champion</span>
+</div>
+</div>
+</div>
+<!-- Rider 3: Alpine Road Climber -->
+<div class="bg-surface-container p-space-lg rounded-DEFAULT flex flex-col justify-between">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center gap-1 text-primary-fixed">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic">
+              "The live Strava segment ping with haptic buzz on the Stelvio pass switchbacks was unreal. The elevation gain tracker is pinpoint accurate against barometric changes. Best cockpit upgrade in a decade."
+            </p>
+<div class="relative w-full h-36 rounded-DEFAULT overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="High altitude Italian alpine mountain pass switchback road with road bike handlebar and aerodynamic round computer in clear crisp sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUVk354SYmmikDXUy5A0D7XlKELh5yOYYzLZf07q1IEH6xt33P_Tdy7EwoxVQuq8SPvLS9Qmav5RFFFk8DZgwe_BXEmZtNcNCZUuqvhgcnLsZ-EPwJOZ7CxqgHExfQQEj0WfydYIT7rmfMpK-HaQVs-aQs1T5Y5FvFFfjXAZMnTyQoSZfuitvYdLY1Xwx0cR-PZJMJLsRMMqpQDenL2ZwubXavFSroKgrnPp8Bt_kvaxpO2MR8aDQ9NA"/>
+<div class="absolute bottom-2 left-2 bg-surface-container-lowest/80 px-2 py-0.5 rounded font-label-sm text-label-sm text-primary-fixed">
+                Passo dello Stelvio // +2,757M Gain
+              </div>
+</div>
+</div>
+<div class="pt-space-md flex items-center gap-space-sm mt-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center font-label-caps text-label-caps text-primary-fixed font-bold">
+              DB
+            </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary text-[15px] leading-tight">David Bernier</span>
+<span class="font-label-sm text-label-sm text-outline uppercase">Cat 1 Road Racer • Haute Route</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: PRE-ORDER BANNER WITH BUNDLE PERKS -->
+<section class="w-full px-margin-desktop py-space-xl bg-surface" id="preorder">
+<div class="max-w-7xl mx-auto">
+<div class="bg-surface-container-high rounded-DEFAULT p-space-xl relative overflow-hidden shadow-2xl">
+<!-- Accent decorative glow -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-primary-container/15 rounded-full blur-3xl pointer-events-none"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center relative z-10">
+<!-- Offer Details -->
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<div class="inline-flex items-center gap-space-xs self-start px-space-sm py-1 bg-surface-container-lowest rounded-DEFAULT text-primary-fixed">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider">Batch 03 Pre-Order • Shipping June 2025</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">
+              Equip Your Cockpit with VELORAY Core.
+            </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+              Includes precision out-front machined alloy mount, aero silicone jacket, USB-C magnetic pogo charger, and lifetime firmware updates with zero recurring subscription fees.
+            </p>
+<!-- Pre-order Bundle Perks List -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">30-Day Trail Guarantee</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Universal Aero Handlebar Mount</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">No Subscription Required</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">2-Year Crash Replacement Shield</span>
+</div>
+</div>
+</div>
+<!-- Checkout Box & Pricing -->
+<div class="lg:col-span-5 bg-surface-container-lowest p-space-xl rounded-DEFAULT flex flex-col gap-space-md">
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps uppercase text-outline">Complete Race Kit</span>
+<span class="font-headline-md text-headline-md text-primary">VELORAY Core 01</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-headline-lg text-headline-lg text-primary-fixed font-bold leading-none">$179</span>
+<span class="font-label-sm text-label-sm text-outline line-through mt-0.5">$229 MSRP</span>
+</div>
+</div>
+<!-- In stock countdown -->
+<div class="bg-surface-container px-space-sm py-2 rounded-DEFAULT flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant font-label-sm text-label-sm uppercase">Batch 03 Allocation</span>
+<span class="text-primary-fixed font-metric-val text-label-caps font-bold">142 OF 500 REMAINING</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-fixed h-full w-[72%]"></div>
+</div>
+<button class="w-full h-12 bg-primary-container text-on-primary-container hover:bg-primary-fixed-dim hover:text-on-primary font-label-caps text-label-caps uppercase tracking-wider font-semibold rounded-DEFAULT flex items-center justify-center gap-space-xs transition-colors shadow-lg mt-space-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+              Pre-Order Now — Save $50
+            </button>
+<div class="flex items-center justify-center gap-space-md pt-space-xs text-outline font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">lock</span> 256-Bit SSL Checkout</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">local_shipping</span> Global DHL Express</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Inline Micro-Interactions Script -->
+<script>
+  (function() {
+    // Distance Countdown simulation on hero device
+    const countdownEl = document.getElementById('hero-countdown');
+    if (countdownEl) {
+      let distance = 120;
+      setInterval(() => {
+        distance -= 1;
+        if (distance < 10) {
+          distance = 180;
+        }
+        countdownEl.textContent = distance;
+      }, 900);
+    }
+  })();
+</script></main><footer class="w-full bg-surface-container-lowest"><div class="w-full px-margin-desktop py-space-xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl pb-space-xl"><div class="lg:col-span-2 flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><img alt="VELORAY Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W3DamihwyF86jzpMCgYlOqs_Aps38L1IdTKGIl1ge1VBkMX6OKKT73FPhNz8v3B601EEj-H-Ga98XfbilORx4nhbJay4drKNuARO8i0xvWfGQzYKOqCYw-mgPgmsFeQ2uaRElMfbiLKI3YXR-LKLCpnzvfgcSSiKOv_7Rzc-fPBBFQHh2YJok1_SF4Tc75JFCOaCfHBa9aaocd4AxhUyPHzYUqy7RYZpbVR6gmQ0Sw1zV5uybo5roPUpCl"/><span class="font-headline-sm text-headline-sm uppercase tracking-wider text-primary">VELORAY</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">High-velocity tactical telemetry and anti-glare sapphire glass turn-by-turn navigation for performance road, gravel, and endurance racing.</p><div class="flex flex-col gap-space-xs mt-space-sm"><span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Telemetry Firmware &amp; Route Drop Updates</span><form class="flex items-center gap-space-xs max-w-sm" onsubmit="return false;"><input class="bg-surface-container font-label-sm text-label-sm px-space-sm py-space-xs text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary-container flex-1 rounded-DEFAULT" placeholder="cyclist@veloray.io" type="email"/><button class="bg-surface-container-high hover:bg-surface-container-highest text-primary-fixed hover:text-primary-fixed font-label-caps text-label-caps uppercase px-space-md py-space-xs transition-colors rounded-DEFAULT" type="submit">Subscribe</button></form></div></div><div class="flex flex-col gap-space-sm"><span class="font-label-caps text-label-caps uppercase text-primary tracking-widest">Hardware</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="specs" href="#">Veloray Core Unit</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="cockpit-mounts" href="#">Machined Alloy Mounts</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="sensors" href="#">ANT+ / BLE Heart Rate Strap</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="shop-and-bundles" href="#">Aero Speed &amp; Cadence Pods</a><span class="font-label-sm text-label-sm text-primary-fixed mt-space-xs">IP68 Dust &amp; Submersion Rated</span></div><div class="flex flex-col gap-space-sm"><span class="font-label-caps text-label-caps uppercase text-primary tracking-widest">Ecosystem &amp; API</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="developer-api" href="#">Open Telemetry SDK</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="fit-files" href="#">FIT 2.0 Real-time Parser</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="companion-app" href="#">iOS &amp; Android Companion</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="bluetooth" href="#">Low Latency BLE 5.3 Stack</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="cloud-sync" href="#">Cloud Auto-Sync</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-caps text-label-caps uppercase text-primary tracking-widest">Support &amp; Trust</span><div class="p-space-sm bg-surface-container rounded-DEFAULT"><div class="flex items-center gap-space-xs text-primary-fixed"><span class="material-symbols-outlined text-[16px]">verified</span><span class="font-label-caps text-label-caps uppercase">2-Year Race Crash Shield</span></div><p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Zero-cost crash replacement guarantee for competitive licensed racers.</p></div><div class="flex items-center gap-space-sm pt-space-xs"><a class="p-space-xs bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors rounded-DEFAULT flex items-center justify-center" href="#"><span class="material-symbols-outlined text-[18px]">terminal</span></a><a class="p-space-xs bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors rounded-DEFAULT flex items-center justify-center" href="#"><span class="material-symbols-outlined text-[18px]">podcasts</span></a><a class="p-space-xs bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors rounded-DEFAULT flex items-center justify-center" href="#"><span class="material-symbols-outlined text-[18px]">public</span></a></div></div></div><div class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex flex-wrap items-center gap-space-sm"><span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Native Sync With:</span><span class="px-space-xs py-0.5 bg-surface-container font-label-caps text-label-caps text-on-surface-variant rounded-DEFAULT">STRAVA</span><span class="px-space-xs py-0.5 bg-surface-container font-label-caps text-label-caps text-on-surface-variant rounded-DEFAULT">KOMOOT</span><span class="px-space-xs py-0.5 bg-surface-container font-label-caps text-label-caps text-on-surface-variant rounded-DEFAULT">GARMIN CONNECT</span><span class="px-space-xs py-0.5 bg-surface-container font-label-caps text-label-caps text-on-surface-variant rounded-DEFAULT">APPLE HEALTH</span><span class="px-space-xs py-0.5 bg-surface-container font-label-caps text-label-caps text-on-surface-variant rounded-DEFAULT">TRAININGPEAKS</span></div><div class="flex items-center gap-space-md font-label-sm text-label-sm text-outline"><span class="font-metric-val text-label-sm font-normal">© 2025 VELORAY INSTRUMENTS LLC</span><a class="hover:text-on-surface transition-colors" href="#">Privacy Telemetry</a><a class="hover:text-on-surface transition-colors" href="#">Hardware Terms</a></div></div></div></footer></body></html>
